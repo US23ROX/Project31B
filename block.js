@@ -1,0 +1,23 @@
+class Block{
+    constructor(x,y,width,height){
+        var options = {
+            'restitution':0.8,
+            'friction':1.0,
+            'density':1.0,
+            'static' :true   
+        }
+        this.body = Bodies.rectangle(x, y, 15, 200, options);
+        this.width = width;
+        this.height = height;
+        //World.add(world, this.body);
+    }
+    display(){
+        var angle = this.body.angle;
+        push();
+        translate(this.body.position.x, this.body.position.y);
+        rotate(angle);
+        fill("white")
+        rect(this.body.position.x,this.body.position.y)
+        pop(); 
+    }
+}
